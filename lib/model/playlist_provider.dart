@@ -27,4 +27,9 @@ class PalyListPorvider extends ChangeNotifier {
 
   List<Song> get playlist => _playlist;
   int? get currentSongIndex => _currentSongIndex;
+
+  set currentSongIndex(int? newIndex) {
+    _currentSongIndex = newIndex;
+    notifyListeners();
+  }
 }
