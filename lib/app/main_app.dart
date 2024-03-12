@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minimal_music_player/pages/pages.dart';
-import 'package:minimal_music_player/themes/themes.dart';
+import 'package:minimal_music_player/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -10,8 +11,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      theme: lightMode,
-      darkTheme: darkMode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
